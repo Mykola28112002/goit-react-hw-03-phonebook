@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 
 export const ContactList = ({ contacts, onDeleteContactList }) => {
-  if (contacts !== undefined) {
-    return (<Ul>
+  return (<Ul>
     {contacts.map((contacts) => (<ContactLi contacts={contacts} onDeleteContactList={onDeleteContactList} key={contacts.id} />))}
   </Ul>)
 };
@@ -17,5 +16,4 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-  }
 };
