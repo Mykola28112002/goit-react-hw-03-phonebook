@@ -42,9 +42,11 @@ export class App extends Component {
     
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
+    if (contacts !== null) {
+      return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
+    }
   };
 
   deleteContact = contactId => {
